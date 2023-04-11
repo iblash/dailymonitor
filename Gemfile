@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'puma', '~> 4.1'
 gem "nokogiri", ">= 1.10.8"
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+gem 'twitter-bootstrap-rails'
+gem 'jquery-rails'
 gem 'sprockets', '< 4'
 gem 'sassc-rails'
 gem 'faker'
