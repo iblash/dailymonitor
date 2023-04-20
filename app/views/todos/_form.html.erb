@@ -1,8 +1,8 @@
 <%= simple_form_for @todo, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :title %>
-  <%= error_span(@todo[:title]) %>
+  <%#= error_span(@todo[:title]) %>
   <%= f.input :description %>
-  <%= error_span(@todo[:description]) %>
+  <%#= error_span(@todo[:description]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

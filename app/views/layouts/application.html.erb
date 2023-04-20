@@ -8,6 +8,9 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -38,19 +41,22 @@
   </head>
   <body>
 
-    <div class="navbar navbar-default navbar-static-top">
+    <div class="navbar navbar-default navbar-static-top navbar-light" style="background-color: #82EEFD;">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">FinalProject</a>
+        <a class="navbar-brand" href="/">Transplant Patient</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "Patient", "/patients" %></li>
+            <li><%= link_to "Daily Monitoring List", "/daily_monitorings" %></li>
+            <li><%= link_to "Transplant Doctor", "/doctors"  %></li>
+            <li><%= link_to "Transplant Nurses", "/nurses"  %></li>
+            <li><%= link_to "Other Team Members", "/other_teams"  %></li>
+            <li><%= link_to "Hospital", "/hospitals"  %></li>
           </ul>
         </div>
       </div>
@@ -63,20 +69,13 @@
           <%= yield %>
         </div>
         <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
+         
         </div><!--/span-->
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2023</p>
+        <p><a href="https://www.linkedin.com/in/milton-lash-68326b217/"target="_blank" rel="noopener noreferrer">&copy; IBLASH 2023</a></p>
+        
       </footer>
 
     </div> <!-- /container -->
