@@ -1,0 +1,182 @@
+<div>
+  <div>
+    <h1>
+      List of all hospitals
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new hospital
+    </h2>
+
+    <form action="/insert_hospital" method="post">
+      <div>
+        <label for="hospital_name_box">
+          Hospital name
+        </label>
+
+        <input type="text" id="hospital_name_box" name="query_hospital_name">
+      </div>
+
+      <div>
+        <label for="address_box">
+          Address
+        </label>
+
+        <input type="text" id="address_box" name="query_address">
+      </div>
+
+      <div>
+        <label for="phone_number_box">
+          Phone number
+        </label>
+
+        <input type="text" id="phone_number_box" name="query_phone_number">
+      </div>
+
+      <div>
+        <label for="patient_id_box">
+          Patient
+        </label>
+
+        <input type="text" id="patient_id_box" name="query_patient_id">
+      </div>
+
+      <div>
+        <label for="doctor_id_box">
+          Doctor
+        </label>
+
+        <input type="text" id="doctor_id_box" name="query_doctor_id">
+      </div>
+
+      <div>
+        <label for="nurse_id_box">
+          Nurse
+        </label>
+
+        <input type="text" id="nurse_id_box" name="query_nurse_id">
+      </div>
+
+      <div>
+        <label for="other_team_id_box">
+          Other team
+        </label>
+
+        <input type="text" id="other_team_id_box" name="query_other_team_id">
+      </div>
+
+      <button>
+        Create hospital
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Hospital name
+        </th>
+
+        <th>
+          Address
+        </th>
+
+        <th>
+          Phone number
+        </th>
+
+        <th>
+          Patient
+        </th>
+
+        <th>
+          Doctor
+        </th>
+
+        <th>
+          Nurse
+        </th>
+
+        <th>
+          Other team
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_hospitals.each do |a_hospital| %>
+      <tr>
+        <td>
+          <%= a_hospital.id %>
+        </td>
+
+        <td>
+          <%= a_hospital.hospital_name %>
+        </td>
+
+        <td>
+          <%= a_hospital.address %>
+        </td>
+
+        <td>
+          <%= a_hospital.phone_number %>
+        </td>
+
+        <td>
+          <%= a_hospital.patient_id %>
+        </td>
+
+        <td>
+          <%= a_hospital.doctor_id %>
+        </td>
+
+        <td>
+          <%= a_hospital.nurse_id %>
+        </td>
+
+        <td>
+          <%= a_hospital.other_team_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_hospital.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_hospital.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/hospitals/<%= a_hospital.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

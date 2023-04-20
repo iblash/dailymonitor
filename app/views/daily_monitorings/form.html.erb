@@ -1,0 +1,10 @@
+<%= simple_form_for @daily_monitoring, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :title %>
+  <%#= error_span(@daily_monitoring[:title]) %>
+  <%= f.input :description %>
+  <%#= error_span(@daily_monitoring[:description]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                daily_monitorings_path, :class => 'btn btn-default' %>
+<% end %>

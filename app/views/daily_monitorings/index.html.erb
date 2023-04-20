@@ -1,0 +1,124 @@
+<div>
+  <div>
+    <h1>
+      List of all daily monitorings
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new daily monitoring
+    </h2>
+
+    <form action="/insert_daily_monitoring" method="post">
+      <div>
+        <label for="title_box">
+          Title
+        </label>
+
+        <input type="text" id="title_box" name="query_title">
+      </div>
+
+      
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="patient_id_box">
+          Patient
+        </label>
+
+        <input type="text" id="patient_id_box" name="query_patient_id">
+      </div>
+
+      <button>
+        Create daily monitoring
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Title
+        </th>
+
+        
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Patient
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_daily_monitorings.each do |a_daily_monitoring| %>
+      <tr>
+        <td>
+          <%= a_daily_monitoring.id %>
+        </td>
+
+        <td>
+          <%= a_daily_monitoring.title %>
+        </td>
+
+        
+
+        <td>
+          <%= a_daily_monitoring.description %>
+        </td>
+
+        <td>
+          <%= a_daily_monitoring.patient_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_daily_monitoring.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_daily_monitoring.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/daily_monitorings/<%= a_daily_monitoring.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

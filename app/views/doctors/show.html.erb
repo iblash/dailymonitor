@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Doctor #<%= @the_doctor.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/doctors">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_doctor/<%= @the_doctor.id %>">
+          Delete doctor
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        First name
+      </dt>
+      <dd>
+        <%= @the_doctor.first_name %>
+      </dd>
+
+      <dt>
+        Last name
+      </dt>
+      <dd>
+        <%= @the_doctor.last_name %>
+      </dd>
+
+      <dt>
+        Phone number
+      </dt>
+      <dd>
+        <%= @the_doctor.phone_number %>
+      </dd>
+
+      <dt>
+        Position
+      </dt>
+      <dd>
+        <%= @the_doctor.position %>
+      </dd>
+
+      <dt>
+        Specialty
+      </dt>
+      <dd>
+        <%= @the_doctor.specialty %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_doctor.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_doctor.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit doctor
+    </h2>
+
+    <form action="/modify_doctor/<%= @the_doctor.id %>"  method="post" >
+      <div>
+        <label for="first_name_box">
+          First name
+        </label>
+
+        <input type="text" id="first_name_box" name="query_first_name" value="<%= @the_doctor.first_name %>">
+      </div>
+
+      <div>
+        <label for="last_name_box">
+          Last name
+        </label>
+
+        <input type="text" id="last_name_box" name="query_last_name" value="<%= @the_doctor.last_name %>">
+      </div>
+
+      <div>
+        <label for="phone_number_box">
+          Phone number
+        </label>
+
+        <input type="text" id="phone_number_box" name="query_phone_number" value="<%= @the_doctor.phone_number %>">
+      </div>
+
+      <div>
+        <label for="position_box">
+          Position
+        </label>
+
+        <input type="text" id="position_box" name="query_position" value="<%= @the_doctor.position %>">
+      </div>
+
+      <div>
+        <label for="specialty_box">
+          Specialty
+        </label>
+
+        <input type="text" id="specialty_box" name="query_specialty" value="<%= @the_doctor.specialty %>">
+      </div>
+
+      <button>
+        Update doctor
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

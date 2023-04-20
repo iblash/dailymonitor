@@ -1,0 +1,161 @@
+<div>
+  <div>
+    <h1>
+      Hospital #<%= @the_hospital.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/hospitals">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_hospital/<%= @the_hospital.id %>">
+          Delete hospital
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Hospital name
+      </dt>
+      <dd>
+        <%= @the_hospital.hospital_name %>
+      </dd>
+
+      <dt>
+        Address
+      </dt>
+      <dd>
+        <%= @the_hospital.address %>
+      </dd>
+
+      <dt>
+        Phone number
+      </dt>
+      <dd>
+        <%= @the_hospital.phone_number %>
+      </dd>
+
+      <dt>
+        Patient
+      </dt>
+      <dd>
+        <%= @the_hospital.patient_id %>
+      </dd>
+
+      <dt>
+        Doctor
+      </dt>
+      <dd>
+        <%= @the_hospital.doctor_id %>
+      </dd>
+
+      <dt>
+        Nurse
+      </dt>
+      <dd>
+        <%= @the_hospital.nurse_id %>
+      </dd>
+
+      <dt>
+        Other team
+      </dt>
+      <dd>
+        <%= @the_hospital.other_team_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_hospital.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_hospital.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit hospital
+    </h2>
+
+    <form action="/modify_hospital/<%= @the_hospital.id %>"  method="post" >
+      <div>
+        <label for="hospital_name_box">
+          Hospital name
+        </label>
+
+        <input type="text" id="hospital_name_box" name="query_hospital_name" value="<%= @the_hospital.hospital_name %>">
+      </div>
+
+      <div>
+        <label for="address_box">
+          Address
+        </label>
+
+        <input type="text" id="address_box" name="query_address" value="<%= @the_hospital.address %>">
+      </div>
+
+      <div>
+        <label for="phone_number_box">
+          Phone number
+        </label>
+
+        <input type="text" id="phone_number_box" name="query_phone_number" value="<%= @the_hospital.phone_number %>">
+      </div>
+
+      <div>
+        <label for="patient_id_box">
+          Patient
+        </label>
+
+        <input type="text" id="patient_id_box" name="query_patient_id" value="<%= @the_hospital.patient_id %>">
+      </div>
+
+      <div>
+        <label for="doctor_id_box">
+          Doctor
+        </label>
+
+        <input type="text" id="doctor_id_box" name="query_doctor_id" value="<%= @the_hospital.doctor_id %>">
+      </div>
+
+      <div>
+        <label for="nurse_id_box">
+          Nurse
+        </label>
+
+        <input type="text" id="nurse_id_box" name="query_nurse_id" value="<%= @the_hospital.nurse_id %>">
+      </div>
+
+      <div>
+        <label for="other_team_id_box">
+          Other team
+        </label>
+
+        <input type="text" id="other_team_id_box" name="query_other_team_id" value="<%= @the_hospital.other_team_id %>">
+      </div>
+
+      <button>
+        Update hospital
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

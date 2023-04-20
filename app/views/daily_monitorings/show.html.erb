@@ -1,0 +1,103 @@
+<div>
+  <div>
+    <h1>
+      Daily monitoring #<%= @the_daily_monitoring.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/daily_monitorings">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_daily_monitoring/<%= @the_daily_monitoring.id %>">
+          Delete daily monitoring
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <dd>
+        <%= @the_daily_monitoring.title %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_daily_monitoring.description %>
+      </dd>
+
+      <dt>
+        Patient
+      </dt>
+      <dd>
+        <%= @the_daily_monitoring.patient_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_daily_monitoring.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_daily_monitoring.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit daily monitoring
+    </h2>
+
+    <form action="/modify_daily_monitoring/<%= @the_daily_monitoring.id %>"  method="post" >
+      <div>
+        <label for="title_box">
+          Title
+        </label>
+
+        <input type="text" id="title_box" name="query_title" value="<%= @the_daily_monitoring.title %>">
+      </div>
+
+      
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description"><%= @the_daily_monitoring.description %></textarea>
+      </div>
+
+      <div>
+        <label for="patient_id_box">
+          Patient
+        </label>
+
+        <input type="text" id="patient_id_box" name="query_patient_id" value="<%= @the_daily_monitoring.patient_id %>">
+      </div>
+
+      <button>
+        Update daily monitoring
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

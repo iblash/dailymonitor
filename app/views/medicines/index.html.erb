@@ -1,0 +1,150 @@
+<div>
+  <div>
+    <h1>
+      List of all medicines
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new medicine
+    </h2>
+
+    <form action="/insert_medicine" method="post">
+      <div>
+        <label for="med_name_box">
+          Med name
+        </label>
+
+        <input type="text" id="med_name_box" name="query_med_name">
+      </div>
+
+      <div>
+        <label for="strength_box">
+          Strength
+        </label>
+
+        <input type="text" id="strength_box" name="query_strength">
+      </div>
+
+      <div>
+        <label for="dosage_box">
+          Dosage
+        </label>
+
+        <input type="text" id="dosage_box" name="query_dosage">
+      </div>
+
+      <div>
+        <label for="patient_id_box">
+          Patient
+        </label>
+
+        <input type="text" id="patient_id_box" name="query_patient_id">
+      </div>
+
+      <div>
+        <label for="doctor_id_box">
+          Doctor
+        </label>
+
+        <input type="text" id="doctor_id_box" name="query_doctor_id">
+      </div>
+
+      <button>
+        Create medicine
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Med name
+        </th>
+
+        <th>
+          Strength
+        </th>
+
+        <th>
+          Dosage
+        </th>
+
+        <th>
+          Patient
+        </th>
+
+        <th>
+          Doctor
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_medicines.each do |a_medicine| %>
+      <tr>
+        <td>
+          <%= a_medicine.id %>
+        </td>
+
+        <td>
+          <%= a_medicine.med_name %>
+        </td>
+
+        <td>
+          <%= a_medicine.strength %>
+        </td>
+
+        <td>
+          <%= a_medicine.dosage %>
+        </td>
+
+        <td>
+          <%= a_medicine.patient_id %>
+        </td>
+
+        <td>
+          <%= a_medicine.doctor_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_medicine.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_medicine.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/medicines/<%= a_medicine.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

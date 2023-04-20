@@ -1,0 +1,206 @@
+<div>
+  <div>
+    <h1>
+      Patient #<%= @the_patient.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/patients">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_patient/<%= @the_patient.id %>">
+          Delete patient
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        First name
+      </dt>
+      <dd>
+        <%= @the_patient.first_name %>
+      </dd>
+
+      <dt>
+        Last name
+      </dt>
+      <dd>
+        <%= @the_patient.last_name %>
+      </dd>
+
+      <dt>
+        Phone number
+      </dt>
+      <dd>
+        <%= @the_patient.phone_number %>
+      </dd>
+
+      <dt>
+        Transplant type
+      </dt>
+      <dd>
+        <%= @the_patient.transplant_type %>
+      </dd>
+
+      <dt>
+        Transplant date
+      </dt>
+      <dd>
+        <%= @the_patient.transplant_date %>
+      </dd>
+
+      <dt>
+        Doctor
+      </dt>
+      <dd>
+        <%= @the_patient.doctor_id %>
+      </dd>
+
+      <dt>
+        Nurse
+      </dt>
+      <dd>
+        <%= @the_patient.nurse_id %>
+      </dd>
+
+      <dt>
+        Other team
+      </dt>
+      <dd>
+        <%= @the_patient.other_team_id %>
+      </dd>
+
+      <dt>
+        Medicine
+      </dt>
+      <dd>
+        <%= @the_patient.medicine_id %>
+      </dd>
+
+      <dt>
+        Hospital
+      </dt>
+      <dd>
+        <%= @the_patient.hospital_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_patient.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_patient.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit patient
+    </h2>
+
+    <form action="/modify_patient/<%= @the_patient.id %>"  method="post" >
+      <div>
+        <label for="first_name_box">
+          First name
+        </label>
+
+        <input type="text" id="first_name_box" name="query_first_name" value="<%= @the_patient.first_name %>">
+      </div>
+
+      <div>
+        <label for="last_name_box">
+          Last name
+        </label>
+
+        <input type="text" id="last_name_box" name="query_last_name" value="<%= @the_patient.last_name %>">
+      </div>
+
+      <div>
+        <label for="phone_number_box">
+          Phone number
+        </label>
+
+        <input type="text" id="phone_number_box" name="query_phone_number" value="<%= @the_patient.phone_number %>">
+      </div>
+
+      <div>
+        <label for="transplant_type_box">
+          Transplant type
+        </label>
+
+        <input type="text" id="transplant_type_box" name="query_transplant_type" value="<%= @the_patient.transplant_type %>">
+      </div>
+
+      <div>
+        <label for="transplant_date_box">
+          Transplant date
+        </label>
+
+        <input type="text" id="transplant_date_box" name="query_transplant_date" value="<%= @the_patient.transplant_date %>">
+      </div>
+
+      <div>
+        <label for="doctor_id_box">
+          Doctor
+        </label>
+
+        <input type="text" id="doctor_id_box" name="query_doctor_id" value="<%= @the_patient.doctor_id %>">
+      </div>
+
+      <div>
+        <label for="nurse_id_box">
+          Nurse
+        </label>
+
+        <input type="text" id="nurse_id_box" name="query_nurse_id" value="<%= @the_patient.nurse_id %>">
+      </div>
+
+      <div>
+        <label for="other_team_id_box">
+          Other team
+        </label>
+
+        <input type="text" id="other_team_id_box" name="query_other_team_id" value="<%= @the_patient.other_team_id %>">
+      </div>
+
+      <div>
+        <label for="medicine_id_box">
+          Medicine
+        </label>
+
+        <input type="text" id="medicine_id_box" name="query_medicine_id" value="<%= @the_patient.medicine_id %>">
+      </div>
+
+      <div>
+        <label for="hospital_id_box">
+          Hospital
+        </label>
+
+        <input type="text" id="hospital_id_box" name="query_hospital_id" value="<%= @the_patient.hospital_id %>">
+      </div>
+
+      <button>
+        Update patient
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
